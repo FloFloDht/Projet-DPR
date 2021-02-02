@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Recettes SYSTEM "recettes.dtd">
+
+<Recettes>
+    <CategoriePlat>
+        <Name>Entrée</Name>
+        <Desc>entrées</Desc>
+        <SousCategoriePlat>
+            <name>Entrée chaude</name>
+            <desc>entrées chaudes</desc>
+            <recettes>
+                <Recette identifiant="oeuf">
+                    <Titre>Œufs cocotte avocat et jambon cru Aoste</Titre>
+                    <Resume>Un œuf cocotte cuit dans un avocat: original, n’est-ce pas? Voici une recette originale, très facile à préparer et qui impressionnera vos convives.</Resume>
+                    <Photo></Photo>
+                    <DatePublication>c'est pas écrit</DatePublication>
+                    <Difficulte>1</Difficulte>
+                    <ref-ingrédient ref="sel"/>
+                    <ref-ingrédient ref="poivre"/>
+                    <NbrePersonne>4</NbrePersonne>
+                    <TmpsPreparation>10 min</TmpsPreparation>
+                    <TmpsCuisson>20 min</TmpsCuisson>
+                    <DescriptionPreparation>1. Taillez les avocats en deux et ôtez le noyau. Assaisonnez (sel, poivre) puis badigeonnez les avocats d’huile d’olive avec un pinceau.
+
+                        2. Déposez une demie tranche de jambon cru Aoste puis remplissez l’intérieur de l’avocat avec du blanc d’œuf et une petite cuillère à café de crème fraîche. Gardez les jaunes dans des petits ramequins individuels au réfrigérateur.
+
+                        3. Enfournez les avocats garnis 15 minutes à 180 °C jusqu’à ce que le blanc soit presque cuit. Ajoutez ensuite les jaunes d’œufs. Poursuivez la cuisson 5 minutes.
+
+                        4.Terminez en arrosant d’un petit filet d’huile d’olive et de ciboulette hachée.
+
+                        Dégustez bien chaud !</DescriptionPreparation>
+                    <NoteInternautes>non notée</NoteInternautes>
+                    <ref-auteur ref="Aoste"/>
+                </Recette>
+            </recettes>
+        </SousCategoriePlat>
+    </CategoriePlat>
+
+
+
+    <Auteurs>
+        <Auteur id="Aoste">
+            <nom>Aoste</nom>
+            <ref-recette ref="oeuf"/>
+            <pays>France</pays>
+        </Auteur>
+        <Auteur id="Tombini">
+            <nom>Marie Tombini</nom>
+            <ref-recette ref="oeuf"/>
+            <pays>France</pays>
+        </Auteur>
+    </Auteurs>
+
+    <produits>
+        <produit id="autres">
+            <nomProduit>autres</nomProduit>
+        </produit>
+    </produits>
+
+    <Ingredients>
+        <Ingredient id="sel">
+            <Nom>Sel</Nom>
+            <ApportNutritif>je sais pas</ApportNutritif>
+            <ApportEnergetique>je sais pas</ApportEnergetique>
+            <Saison>je sais pas</Saison>
+            <Description>je sais pas</Description>
+            <idRec ref="oeuf"/>
+            <idProd ref="autres"/>
+        </Ingredient>
+        <Ingredient id="poivre">
+            <Nom>Poivre</Nom>
+            <ApportNutritif>je sais pas</ApportNutritif>
+            <ApportEnergetique>je sais pas</ApportEnergetique>
+            <Saison>je sais pas</Saison>
+            <Description>je sais pas</Description>
+            <idRec ref="oeuf"/>
+            <idProd ref="autres"/>
+        </Ingredient>
+    </Ingredients>
+</Recettes>

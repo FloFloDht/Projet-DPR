@@ -1,0 +1,58 @@
+<!ELEMENT Recettes (CategoriePlat*, produits*, Ingredients*, Auteurs*)* >
+<!ELEMENT recettes (Recette+) >
+
+<!ELEMENT Recette (Titre, Resume, Photo, DatePublication, Difficulte, ref-ingrédient+, NbrePersonne, TmpsPreparation, TmpsCuisson?, TmpsRepos?, DescriptionPreparation, NoteInternautes, ref-auteur)* >
+<!ELEMENT Titre ( #PCDATA) >
+<!ELEMENT Resume (#PCDATA) >
+<!ELEMENT Photo EMPTY >
+<!ELEMENT DatePublication (#PCDATA) >
+<!ELEMENT Difficulte (#PCDATA) >
+<!ELEMENT ref-ingrédient EMPTY>
+<!ELEMENT NbrePersonne (#PCDATA) >
+<!ELEMENT TmpsPreparation (#PCDATA) >
+<!ELEMENT TmpsCuisson (#PCDATA) > <!--0 ou 1-->
+<!ELEMENT TmpsRepos (#PCDATA) > <!--0 ou 1-->
+<!ELEMENT DescriptionPreparation (#PCDATA) >
+<!ELEMENT NoteInternautes (#PCDATA) > <!--0 a n-->
+<!ELEMENT ref-auteur EMPTY >
+
+<!ELEMENT Ingredients (Ingredient+)>
+<!ELEMENT Ingredient (Nom, ApportNutritif, ApportEnergetique, Saison, Description, idRec, idProd)>
+<!ELEMENT Nom (#PCDATA) >
+<!ELEMENT ApportNutritif (#PCDATA) >
+<!ELEMENT ApportEnergetique (#PCDATA) >
+<!ELEMENT Saison (#PCDATA) >
+<!ELEMENT Description (#PCDATA) >
+<!ELEMENT idRec EMPTY >
+<!ELEMENT idProd EMPTY >
+
+<!ELEMENT Auteurs (Auteur*) >
+<!ELEMENT Auteur (nom, ref-recette, age?, pays, sexe?, bio?)>
+<!ELEMENT nom (#PCDATA) >
+<!ELEMENT ref-recette EMPTY >
+<!ELEMENT age (#PCDATA) >
+<!ELEMENT pays (#PCDATA) >
+<!ELEMENT sexe (#PCDATA) >
+<!ELEMENT bio (#PCDATA) >
+
+<!ELEMENT CategoriePlat (Name, Desc, SousCategoriePlat)>
+<!ELEMENT Name (#PCDATA) >
+<!ELEMENT Desc (#PCDATA) >
+
+<!ELEMENT SousCategoriePlat (name, desc, recettes) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT desc (#PCDATA) >
+
+<!ELEMENT produits (produit*)>
+<!ELEMENT produit (nomProduit)>
+<!ELEMENT nomProduit (#PCDATA) >
+
+<!ATTLIST Recette identifiant ID #REQUIRED>
+<!ATTLIST Auteur id ID #REQUIRED>
+<!ATTLIST ref-recette ref IDREF #REQUIRED>
+<!ATTLIST idRec ref IDREF #REQUIRED>
+<!ATTLIST ref-auteur ref IDREF #REQUIRED>
+<!ATTLIST Ingredient id ID #REQUIRED>
+<!ATTLIST ref-ingrédient ref IDREF #REQUIRED>
+<!ATTLIST produit id ID #REQUIRED>
+<!ATTLIST idProd ref IDREF #REQUIRED>

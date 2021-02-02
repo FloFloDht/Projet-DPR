@@ -25,7 +25,7 @@
             <xsl:variable name="ID" select="@id"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
-                <ul>
+                <ul>Recette(s) :
                     <xsl:for-each select="info[@nom= 'recette']">
                         <li><xsl:value-of select="@value"/></li>
                     </xsl:for-each>

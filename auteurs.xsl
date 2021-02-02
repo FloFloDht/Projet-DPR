@@ -38,7 +38,4 @@
         </xsl:for-each>
     </xsl:template>
 
-
-    <!-- TODO: faire un template pour les recettes, les ingredients, les produits, les categories et sous-categories.-->
-
 </xsl:stylesheet>

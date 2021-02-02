@@ -23,8 +23,8 @@
     <xsl:template name="liste-des-ingredients">
         <xsl:for-each select="//objet[@type = 'ingrédient']">
             <xsl:variable name="ID" select="@id"/>
+            <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
-                <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
                 <ul>
                     <xsl:for-each select="info[@nom= 'recette']">
                         <li><xsl:value-of select="@value"/></li>

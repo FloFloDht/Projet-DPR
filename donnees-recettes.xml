@@ -54,7 +54,7 @@
 		<info nom="ingrédient" value="M110"/>
 	</objet>
 	<objet id="P7914" type="produit">
-		<info nom="nom" value="legumes"/>
+		<info nom="nom" value="Légumes"/>
 		<info nom="nom-court" value="legumes"/>
 		<info nom="ingrédient" value="e300"/>
 		<info nom="ingrédient" value="oi16"/>

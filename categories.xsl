@@ -38,22 +38,29 @@
         <h1>Listes des sous-catégories : </h1>
         <ul>
             <xsl:for-each select="//objet[@type = 'sous-catégorie']">
-                <xsl:variable name="ID" select="@id"/>
-                <li><a href="#{$ID}"> <xsl:value-of select="info[@nom = 'nom']/@value"/></a></li>
+                <xsl:variable name="IDs" select="@id"/>
+                <li><a href="#{$IDs}"> <xsl:value-of select="info[@nom = 'nom']/@value"/></a></li>
             </xsl:for-each>
         </ul>
 
     </xsl:template>
 
     <xsl:template name="liste-des-sous-categories">
-        <xsl:for-each select="//objet[@type='sous-catégorie']">
-            <xsl:variable name="ID" select="@id"/>
-            <h2 id="#{$ID}"><xsl:value-of select="info[@nom='nom']/@value"/></h2>
-            <ul>
-                <li>Descriptif : <xsl:value-of select="info[@nom='descriptif']"/></li>
-                <li>Catégorie : <xsl:value-of select="info[@nom='catégorie']/@value"/></li>
-            </ul>
-        </xsl:for-each>
+            <xsl:for-each select="//objet[@type='sous-catégorie']">
+                <xsl:variable name="IDs" select="@id"/>
+                <xsl:variable name="idcat" select="info[@nom='catégorie']/@value"/>
+                <h2 id="#{$IDs}"><xsl:value-of select="info[@nom='nom']/@value"/></h2>
+                <ul>
+                    <li>Descriptif : <xsl:value-of select="info[@nom='descriptif']"/></li>
+                    <li>
+                        <xsl:for-each select="preceding::objet[@type= 'catégorie']">
+                            <xsl:if test="$idcat = @id">
+                                Catégorie : <xsl:value-of select="info[@nom='nom']/@value"/>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </li>
+                </ul>
+            </xsl:for-each>
     </xsl:template>
 
 </xsl:stylesheet>

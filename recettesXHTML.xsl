@@ -26,8 +26,23 @@
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
                 <li>Résumé : <xsl:value-of select="info[@nom='résumé']"/></li>
-                <li><xsl:value-of select="info[@nom='photo']/@value"/></li>
+                <li>Photo : <xsl:value-of select="info[@nom='photo']/@value"/></li>
+                <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>
                 <li><xsl:value-of select="info[@nom='difficulté']/@value"/></li>
+                <ul>Ingrédients :
+                    <xsl:for-each select="info[@nom= 'ingrédient']">
+                        <li><xsl:value-of select="@value"/>
+                            <xsl:value-of select="@quantite"/></li>
+                    </xsl:for-each>
+                </ul>
+                <li>Sous-catégorie : <xsl:value-of select="info[@nom='sous-catégorie']/@value"/></li>
+                <li>Nbre de personne : <xsl:value-of select="info[@nom='nbre_personnes']/value"/></li>
+                <li>Préparation : <xsl:value-of select="info[@nom='Préparation']/@value"/></li>
+                <li>Cuisson: <xsl:value-of select="info[@nom='Cuisson']/@value"/></li>
+                <li>Repos : <xsl:value-of select="info[@nom='Repos']/@value"/></li>
+                <li>Préparation : <xsl:value-of select="info[@nom='Préparation']"/></li>
+                <li><xsl:value-of select="info[@nom='auteur']/@value"/></li>
+                <li><xsl:value-of select="info[@nom='note']/@value"/></li>
             </ul>
         </xsl:for-each>
 

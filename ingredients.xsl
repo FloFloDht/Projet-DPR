@@ -30,8 +30,11 @@
                         <li><xsl:value-of select="@value"/></li>
                     </xsl:for-each>
                 </ul>
+                <li>Apport énergétique : <xsl:value-of select="info[@nom = 'Apport énergétique']/@value"/></li>
+                <li>Apport nutritif : <xsl:value-of select="info[@nom = 'Apport nutritif']/@value"/></li>
+                <li>Saison : <xsl:value-of select="info[@nom = 'saison']/@value"/></li>
                 <li>Produit : <xsl:value-of select="info[@nom = 'produit']/@value"/></li>
-                <li>Descriptif : <xsl:value-of select="info[@nom = 'descriptif']/@p"/></li>
+                <li>Descriptif : <xsl:value-of select="info[@nom = 'descriptif']"/></li>
             </ul>
         </xsl:for-each>
 

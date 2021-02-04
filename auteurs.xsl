@@ -19,23 +19,26 @@
             </xsl:for-each>
         </ul>
     </xsl:template>
-    
+
     <xsl:template name="liste-des-auteurs">
         <xsl:for-each select="//objet[@type = 'auteur']">
             <xsl:variable name="ID" select="@id"/>
+            <xsl:variable name="idrec" select="info[@nom='recette']/@value"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'idext']/@value"/></h2>
             <ul>
-                <li>Pays : <xsl:value-of select="info[@nom = 'pays']/@value"/></li>
-                <li>Sexe : <xsl:value-of select="info[@nom = 'sexe']/@value"/></li>
-                <ul>Recette(s) :
-                    <xsl:for-each select="info[@nom='recette']">
-                        <li><xsl:value-of select="@value"/></li>
-                    </xsl:for-each>
-                </ul>
+                <li><xsl:value-of select="info[@nom = 'pays']/@value"/></li>
+                <li><xsl:value-of select="info[@nom = 'sexe']/@value"/></li>
+                <li>Recettes :</li>
+                <xsl:for-each select="preceding::objet[@type='recette']">
+                    <xsl:if test="$idrec = @id">
+                        <li><xsl:value-of select="info[@nom ='nom']/@value"/></li>
+                    </xsl:if>
+                </xsl:for-each>
 
                 <li><xsl:value-of select="info[@nom = 'biographie']/@value"/></li>
             </ul>
         </xsl:for-each>
     </xsl:template>
+
 
 </xsl:stylesheet>

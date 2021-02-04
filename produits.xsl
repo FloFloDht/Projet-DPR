@@ -23,12 +23,15 @@
     <xsl:template name="liste-des-produits">
         <xsl:for-each select="//objet[@type = 'produit']">
             <xsl:variable name="ID" select="@id"/>
+            <xsl:variable name="idingr" select="info[@nom='ingrédient']/@value"/>
             <h2 id="#{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
                 <li>Nom court : <xsl:value-of select="info[@nom = 'nom-court']/@value"/></li>
                 <ul> Ingrédient(s) :
-                    <xsl:for-each select="info[@nom='ingrédient']">
-                        <li><xsl:value-of select="@value"/></li>
+                    <xsl:for-each select="following::objet[@type='ingrédient']">
+                        <xsl:if test="$idingr = @id">
+                            <li><xsl:value-of select="info[@nom ='nom']/@value"/></li>
+                        </xsl:if>
                     </xsl:for-each>
                 </ul>
             </ul>

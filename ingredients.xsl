@@ -23,17 +23,27 @@
     <xsl:template name="liste-des-ingredients">
         <xsl:for-each select="//objet[@type = 'ingrédient']">
             <xsl:variable name="ID" select="@id"/>
+            <xsl:variable name="idprod" select="info[@nom='produit']/@value"/>
+            <xsl:variable name="idrec" select="info[@nom='recette']/@value"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
                 <ul>Recette(s) :
-                    <xsl:for-each select="info[@nom= 'recette']">
-                        <li><xsl:value-of select="@value"/></li>
+                    <xsl:for-each select="preceding::objet[@type= 'recette']">
+                        <xsl:if test="$idrec = @id">
+                            <li><xsl:value-of select="info[@nom='nom']/@value"/></li>
+                        </xsl:if>
                     </xsl:for-each>
                 </ul>
                 <li>Apport énergétique : <xsl:value-of select="info[@nom = 'Apport énergétique']/@value"/></li>
                 <li>Apport nutritif : <xsl:value-of select="info[@nom = 'Apport nutritif']/@value"/></li>
                 <li>Saison : <xsl:value-of select="info[@nom = 'saison']/@value"/></li>
-                <li>Produit : <xsl:value-of select="info[@nom = 'produit']/@value"/></li>
+                <li>Produit :
+                    <xsl:for-each select="preceding::objet[@type= 'produit']">
+                        <xsl:if test="$idprod= @id">
+                            <xsl:value-of select="info[@nom='nom']/@value"/>
+                        </xsl:if>
+                     </xsl:for-each>
+                </li>
                 <li>Descriptif : <xsl:value-of select="info[@nom = 'descriptif']"/></li>
             </ul>
         </xsl:for-each>

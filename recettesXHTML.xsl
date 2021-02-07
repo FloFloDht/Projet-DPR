@@ -28,7 +28,7 @@
             <xsl:variable name="idingr" select="info[@nom='ingrédient']/@value"/>
             <xsl:variable name="idsouscat" select="info[@nom='sous-catégorie']/@value"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
-            <p>Photo : <img src="$image"/> </p>
+            <p><img src="{$image}"/></p>
             <ul>
                 <li>Résumé : <xsl:value-of select="info[@nom='résumé']"/></li>
                 <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>

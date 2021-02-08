@@ -18,6 +18,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
     <xs:element name="Recette">
         <xs:complexType>
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -122,15 +123,19 @@
     </xs:element>
     <xs:element name="Auteur">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="nom"/>
-                <xs:element ref="ref-recette"/>
-                <xs:element minOccurs="0" ref="age"/>
-                <xs:element ref="pays"/>
-                <xs:element minOccurs="0" ref="sexe"/>
-                <xs:element minOccurs="0" ref="bio"/>
-            </xs:sequence>
-            <xs:attribute name="id" use="required" type="xs:ID"/>
+            <xs:complexContent>
+            <xs:extension base="extendAuteur">
+                <xs:sequence>
+                    <xs:element ref="nom"/>
+                    <xs:element ref="ref-recette"/>
+                    <xs:element minOccurs="0" ref="age"/>
+                    <xs:element ref="pays"/>
+                    <xs:element minOccurs="0" ref="sexe"/>
+                    <xs:element minOccurs="0" ref="bio"/>
+                </xs:sequence>
+                <xs:attribute name="id" use="required" type="xs:ID"/>
+            </xs:extension>
+            </xs:complexContent>
         </xs:complexType>
     </xs:element>
     <xs:element name="nom" type="xs:string"/>
@@ -187,4 +192,20 @@
         </xs:sequence>
     </xs:complexType>
     <xs:element name="nomProduit" type="xs:string"/>
+
+    <xs:complexType name="extendAuteur">
+        <xs:sequence>
+            <xs:element name="titre"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="restrictionAuteur">
+        <xs:simpleContent>
+            <xs:restriction base="extendAuteur">
+                <xs:enumeration value="Chef cuisinier"/>
+                <xs:enumeration value="Cuisinier amateur"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
 </xs:schema>

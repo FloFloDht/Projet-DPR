@@ -2,7 +2,6 @@
     <xsl:output method="HTML" indent="yes" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" encoding="ISO-8859-1"/>
 
     <xsl:template match="/">
-        <xsl:result-document href="recettes.html" format="recette-output"/>
         <html>
             <body>
                 <xsl:call-template name="ancrage-des-recettes"/>

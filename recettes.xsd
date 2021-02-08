@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
     <xs:element name="Recettes">
         <xs:complexType>
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -25,19 +26,27 @@
                 <xs:element ref="Photo"/>
                 <xs:element ref="DatePublication"/>
                 <xs:element ref="Difficulte"/>
-                <xs:element maxOccurs="unbounded" ref="ref-ingrédient"/>
+                <xs:element maxOccurs="20" ref="ref-ingrédient"/>
                 <xs:element ref="NbrePersonne"/>
                 <xs:element ref="TmpsPreparation"/>
                 <xs:element minOccurs="0" ref="TmpsCuisson"/>
                 <xs:element minOccurs="0" ref="TmpsRepos"/>
                 <xs:element ref="DescriptionPreparation"/>
-                <xs:element ref="NoteInternautes"/>
+                <xs:element ref="NoteInternautes" />
                 <xs:element ref="ref-auteur"/>
             </xs:sequence>
             <xs:attribute name="identifiant" use="required" type="xs:ID"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Titre" type="xs:string"/>
+
+    <xs:simpleType name= "titre">
+    <xs:restriction base= "titre">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="70" />
+    </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="Titre" type="titre" />
     <xs:element name="Resume" type="xs:string"/>
     <xs:element name="Photo">
         <xs:complexType/>
@@ -55,8 +64,13 @@
     <!-- 0 ou 1 -->
     <xs:element name="TmpsRepos" type="xs:string"/>
     <!-- 0 ou 1 -->
-    <xs:element name="DescriptionPreparation" type="xs:string"/>
-    <xs:element name="NoteInternautes" type="xs:string"/>
+    <xs:element name="DescriptionPreparation"/>
+    <xs:element name="NoteInternautes">
+        <xs:complexType>
+        <xs:attribute name="note" use="optional" type="xs:string">
+        </xs:attribute>
+        </xs:complexType>
+    </xs:element>
     <!-- 0 a n -->
     <xs:element name="ref-auteur">
         <xs:complexType>

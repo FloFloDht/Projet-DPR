@@ -3,11 +3,11 @@
 
 <Recettes>
     <CategoriePlat>
-        <Name>Entrée</Name>
-        <Desc>entrées</Desc>
+        <nom>Entrée</nom>
+        <description>Les entrées</description>
         <SousCategoriePlat>
-            <name>Entrée chaude</name>
-            <desc>entrées chaudes</desc>
+            <nom>Entrée chaudes</nom>
+            <description>les entrées de types chauds</description>
             <recettes>
                 <Recette identifiant="oeuf">
                     <Titre>Œufs cocotte avocat et jambon cru Aoste</Titre>
@@ -53,26 +53,26 @@
 
     <produits>
         <produit id="autres">
-            <nomProduit>autres</nomProduit>
+            <nom>autres</nom>
         </produit>
     </produits>
 
     <Ingredients>
         <Ingredient id="sel">
-            <Nom>Sel</Nom>
+            <nom>Sel</nom>
             <ApportNutritif>je sais pas</ApportNutritif>
             <ApportEnergetique>je sais pas</ApportEnergetique>
             <Saison>je sais pas</Saison>
-            <Description>je sais pas</Description>
+            <description>je sais pas</description>
             <idRec ref="oeuf"/>
             <idProd ref="autres"/>
         </Ingredient>
         <Ingredient id="poivre">
-            <Nom>Poivre</Nom>
+            <nom>Poivre</nom>
             <ApportNutritif>je sais pas</ApportNutritif>
             <ApportEnergetique>je sais pas</ApportEnergetique>
             <Saison>je sais pas</Saison>
-            <Description>je sais pas</Description>
+            <description>je sais pas</description>
             <idRec ref="oeuf"/>
             <idProd ref="autres"/>
         </Ingredient>

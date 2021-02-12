@@ -17,34 +17,27 @@
 <!ELEMENT ref-auteur EMPTY >
 
 <!ELEMENT Ingredients (Ingredient+)>
-<!ELEMENT Ingredient (Nom, ApportNutritif, ApportEnergetique, Saison, Description, idRec, idProd)>
-<!ELEMENT Nom (#PCDATA) >
+<!ELEMENT Ingredient (%nom;, %description;, ApportNutritif, ApportEnergetique, Saison, idRec, idProd)>
 <!ELEMENT ApportNutritif (#PCDATA) >
 <!ELEMENT ApportEnergetique (#PCDATA) >
 <!ELEMENT Saison (#PCDATA) >
-<!ELEMENT Description (#PCDATA) >
 <!ELEMENT idRec EMPTY >
 <!ELEMENT idProd EMPTY >
 
 <!ELEMENT Auteurs (Auteur*) >
-<!ELEMENT Auteur (nom, ref-recette, age?, pays, sexe?, bio?)>
-<!ELEMENT nom (#PCDATA) >
+<!ELEMENT Auteur (%nom;, ref-recette, age?, pays, sexe?, bio?)>
 <!ELEMENT ref-recette EMPTY >
 <!ELEMENT age (#PCDATA) >
 <!ELEMENT pays (#PCDATA) >
 <!ELEMENT sexe (#PCDATA) >
 <!ELEMENT bio (#PCDATA) >
 
-<!ELEMENT CategoriePlat (Name, Desc, SousCategoriePlat)>
-<!ELEMENT Name (#PCDATA) >
-<!ELEMENT Desc (#PCDATA) >
+<!ELEMENT CategoriePlat (%nom;, %description;, SousCategoriePlat)>
 
-<!ELEMENT SousCategoriePlat (name, desc, recettes) >
-<!ELEMENT name (#PCDATA) >
-<!ELEMENT desc (#PCDATA) >
+<!ELEMENT SousCategoriePlat (%nom;, %description;, recettes) >
 
 <!ELEMENT produits (produit*)>
-<!ELEMENT produit (nomProduit)>
+<!ELEMENT produit (%nom;)>
 <!ELEMENT nomProduit (#PCDATA) >
 
 <!ATTLIST Recette identifiant ID #REQUIRED>
@@ -56,3 +49,8 @@
 <!ATTLIST ref-ingrédient ref IDREF #REQUIRED>
 <!ATTLIST produit id ID #REQUIRED>
 <!ATTLIST idProd ref IDREF #REQUIRED>
+
+<!ELEMENT nom (#PCDATA) >
+<!ENTITY % nom "nom">
+<!ELEMENT description (#PCDATA) >
+<!ENTITY % description "description">

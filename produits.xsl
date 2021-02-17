@@ -24,7 +24,7 @@
         <xsl:for-each select="//objet[@type = 'produit']">
             <xsl:variable name="ID" select="@id"/>
             <xsl:variable name="idingr" select="info[@nom='ingrédient']/@value"/>
-            <h2 id="#{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
+            <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
                 <li>Nom court : <xsl:value-of select="info[@nom = 'nom-court']/@value"/></li>
                 <ul> Ingrédient(s) :

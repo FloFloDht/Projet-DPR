@@ -33,7 +33,7 @@
                 <li>Recettes :</li>
                 <xsl:for-each-group select="preceding::objet[@type='recette']" group-by="info[@nom ='nom']/@value">
                     <xsl:if test="$idrec = @id">
-                        <li><a href="recettes.html#{$idrec}"><xsl:value-of select="info[@nom ='nom']/@value"/></a></li>
+                        <li><a href="recettes.html#{@id}"><xsl:value-of select="info[@nom ='nom']/@value"/></a></li>
                     </xsl:if>
                 </xsl:for-each-group>
 

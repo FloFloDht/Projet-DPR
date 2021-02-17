@@ -30,7 +30,7 @@
                 <ul> Ingrédient(s) :
                     <xsl:for-each select="following::objet[@type='ingrédient']">
                         <xsl:if test="$idingr = @id">
-                            <li><a href="ingredients.html#{$idingr}"><xsl:value-of select="info[@nom ='nom']/@value"/></a></li>
+                            <li><a href="ingredients.html#{@id}"><xsl:value-of select="info[@nom ='nom']/@value"/></a></li>
                         </xsl:if>
                     </xsl:for-each>
                 </ul>

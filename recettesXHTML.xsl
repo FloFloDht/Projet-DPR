@@ -39,7 +39,7 @@
                     <ul>Ingrédients :
                         <xsl:for-each select="following::objet[@type= 'ingrédient']">
                             <xsl:if test="$idingr = @id">
-                                <li><a href="ingredients.html#{$idingr}"><xsl:value-of select="info[@nom = 'nom']/@value"/></a>
+                                <li><a href="ingredients.html#{@id}"><xsl:value-of select="info[@nom = 'nom']/@value"/></a>
                                     <xsl:value-of select="@quantite"/></li>
                             </xsl:if>
                         </xsl:for-each>
@@ -47,7 +47,7 @@
                     <li>Sous-catégorie :
                         <xsl:for-each select="preceding::objet[@type= 'sous-catégorie']">
                             <xsl:if test="$idsouscat = @id">
-                                <xsl:value-of select="info[@nom='nom']/@value"/>
+                                <a href="categories.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                             </xsl:if>
                         </xsl:for-each>
                     </li>
@@ -59,7 +59,7 @@
                     <li>
                         <xsl:for-each select="following::objet[@type= 'auteur']">
                             <xsl:if test="$idaut = @id">
-                                Auteur :<a href="auteurs.html#{$idaut}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
+                                Auteur :<a href="auteurs.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                             </xsl:if>
                         </xsl:for-each>
                     </li>

@@ -59,6 +59,13 @@
                             </xsl:if>
                         </xsl:for-each>
                     </li>
+                    <li>Recettes :</li>
+                    <xsl:for-each select="following::objet[@type='recette']">
+                        <xsl:variable name="idsc" select="info[@nom='sous-catégorie']/@value"/>
+                        <xsl:if test="$idsc = $IDs">
+                            <li><a href="recettes.html#{@id}"> <xsl:value-of select="info[@nom='nom']/@value"/></a></li>
+                        </xsl:if>
+                    </xsl:for-each>
                 </ul>
             </xsl:for-each>
     </xsl:template>

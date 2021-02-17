@@ -30,7 +30,7 @@
                 <ul>Recette(s) :
                     <xsl:for-each select="preceding::objet[@type= 'recette']">
                         <xsl:if test="$idrec = @id">
-                            <li><xsl:value-of select="info[@nom='nom']/@value"/></li>
+                            <li><a href="recettes.html#{$idrec}"><xsl:value-of select="info[@nom='nom']/@value"/></a></li>
                         </xsl:if>
                     </xsl:for-each>
                 </ul>
@@ -40,7 +40,7 @@
                 <li>Produit :
                     <xsl:for-each select="preceding::objet[@type= 'produit']">
                         <xsl:if test="$idprod= @id">
-                            <xsl:value-of select="info[@nom='nom']/@value"/>
+                            <a href="produits.html#{$idprod}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                         </xsl:if>
                      </xsl:for-each>
                 </li>

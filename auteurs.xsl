@@ -14,6 +14,7 @@
         <h1>Listes des auteurs : </h1>
         <ul>
             <xsl:for-each select="//objet[@type = 'auteur']">
+                <xsl:sort select="info[@nom='prenom']/@value" order="ascending"/>
                 <xsl:variable name="ID" select="@id"/>
                 <li><a href="#{$ID}"> <xsl:value-of select="info[@nom = 'idext']/@value"/></a></li>
             </xsl:for-each>
@@ -22,6 +23,7 @@
 
     <xsl:template name="liste-des-auteurs">
         <xsl:for-each select="//objet[@type = 'auteur']">
+            <xsl:sort select="info[@nom='prenom']/@value" order="ascending"/>
             <xsl:variable name="ID" select="@id"/>
             <xsl:variable name="idrec" select="info[@nom='recette']/@value"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'idext']/@value"/></h2>
@@ -29,11 +31,11 @@
                 <li><xsl:value-of select="info[@nom = 'pays']/@value"/></li>
                 <li><xsl:value-of select="info[@nom = 'sexe']/@value"/></li>
                 <li>Recettes :</li>
-                <xsl:for-each select="preceding::objet[@type='recette']">
+                <xsl:for-each-group select="preceding::objet[@type='recette']" group-by="info[@nom ='nom']/@value">
                     <xsl:if test="$idrec = @id">
-                        <li><xsl:value-of select="info[@nom ='nom']/@value"/></li>
+                        <li><a href="recettes.html#{$idrec}"><xsl:value-of select="info[@nom ='nom']/@value"/></a></li>
                     </xsl:if>
-                </xsl:for-each>
+                </xsl:for-each-group>
 
                 <li><xsl:value-of select="info[@nom = 'biographie']/@value"/></li>
             </ul>

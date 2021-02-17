@@ -34,7 +34,7 @@
 
 <!ELEMENT CategoriePlat (%nom;, %description;, SousCategoriePlat)>
 
-<!ELEMENT SousCategoriePlat (%nom;, %description;, recettes) >
+<!ELEMENT SousCategoriePlat (%nom;, %description;?, recettes) >
 
 <!ELEMENT produits (produit*)>
 <!ELEMENT produit (%nom;)>

@@ -7,6 +7,13 @@
                 <link rel="stylesheet" href="style.css"/>
             </head>
             <body>
+                <nav>
+                    <a href="auteurs.html">Auteurs</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="ingredients.html">Ingredients</a>
+                    <a href="produits.html">Produits</a>
+                    <a href="recettes.html">Recettes</a>
+                </nav>
                 <xsl:call-template name="ancrage-des-categories"/>
                 <xsl:call-template name="liste-des-categories"/>
 

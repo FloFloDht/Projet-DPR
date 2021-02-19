@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:500');
 
 body{
-    background-color: #008b8b;
+    background-color: cadetblue;
 }
 
 .back{
@@ -84,3 +84,4 @@ nav a:hover:before{
         transform:translateY(0);
     }
 }
+

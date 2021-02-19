@@ -5,15 +5,15 @@
     <xsl:template match="/">
         <html>
             <head>
-                <link rel="stylesheet" href="style.css"/>
+                <link rel="stylesheet" href="home.css"/>
             </head>
             <body>
                 <nav>
-                    <a href="auteurs.html">auteurs</a>
-                    <a href="categories.html">categories</a>
-                    <a href="ingredients.html">ingredients</a>
-                    <a href="produits.html">produits</a>
-                    <a href="recettes.html">recettes</a>
+                    <a href="auteurs.html">Auteurs</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="ingredients.html">Ingredients</a>
+                    <a href="produits.html">Produits</a>
+                    <a href="recettes.html">Recettes</a>
                 </nav>
                 <h1>Bienvenue</h1>
                 <footer>

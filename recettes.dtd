@@ -16,6 +16,11 @@
 <!ELEMENT NoteInternautes (#PCDATA) > <!--0 a n-->
 <!ELEMENT ref-auteur EMPTY >
 
+<!ELEMENT nom (#PCDATA) >
+<!ENTITY % nom "nom">
+<!ELEMENT description (#PCDATA) >
+<!ENTITY % description "description">
+
 <!ELEMENT Ingredients (Ingredient+)>
 <!ELEMENT Ingredient (%nom;, %description;, ApportNutritif, ApportEnergetique, Saison, idRec, idProd)>
 <!ELEMENT ApportNutritif (#PCDATA) >
@@ -49,8 +54,3 @@
 <!ATTLIST ref-ingrédient ref IDREF #REQUIRED>
 <!ATTLIST produit id ID #REQUIRED>
 <!ATTLIST idProd ref IDREF #REQUIRED>
-
-<!ELEMENT nom (#PCDATA) >
-<!ENTITY % nom "nom">
-<!ELEMENT description (#PCDATA) >
-<!ENTITY % description "description">

@@ -8,6 +8,7 @@
             </head>
             <body>
                 <nav>
+                    <a href="index.html">Acceuil</a>
                     <a href="auteurs.html">Auteurs</a>
                     <a href="categories.html">Categories</a>
                     <a href="ingredients.html">Ingredients</a>

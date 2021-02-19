@@ -4,6 +4,9 @@
 
     <xsl:template match="/">
         <html>
+            <head>
+                <link rel="stylesheet" href="style.css"/>
+            </head>
             <body>
                 <xsl:call-template name="ancrage-des-recettes"/>
                 <xsl:call-template name="liste-des-recettes"/>

@@ -3,6 +3,9 @@
 
     <xsl:template match="/">
         <html>
+            <head>
+                <link rel="stylesheet" href="style.css"/>
+            </head>
             <body>
                 <xsl:call-template name="ancrage-des-categories"/>
                 <xsl:call-template name="liste-des-categories"/>

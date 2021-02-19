@@ -4,6 +4,9 @@
 
     <xsl:template match="/">
         <html>
+            <head>
+                <link rel="stylesheet" href="style.css"/>
+            </head>
             <body>
                 <nav>
                     <a href="auteurs.html">auteurs</a>

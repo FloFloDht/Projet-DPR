@@ -40,24 +40,23 @@
             <xsl:variable name="idrec" select="info[@nom='recette']/@value"/>
             <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
             <ul>
-                <ul>Recette(s) :
+                <strong>Recette(s) :</strong>
                     <xsl:for-each select="preceding::objet[@type= 'recette']">
                         <xsl:if test="$idrec = @id">
                             <li><a href="recettes.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a></li>
                         </xsl:if>
                     </xsl:for-each>
-                </ul>
-                <li>Apport énergétique : <xsl:value-of select="info[@nom = 'Apport énergétique']/@value"/></li>
-                <li>Apport nutritif : <xsl:value-of select="info[@nom = 'Apport nutritif']/@value"/></li>
-                <li>Saison : <xsl:value-of select="info[@nom = 'saison']/@value"/></li>
-                <li>Produit :
+                <li><strong>Apport énergétique :</strong><xsl:value-of select="info[@nom = 'Apport énergétique']/@value"/></li>
+                <li><strong>Apport nutritif : </strong><xsl:value-of select="info[@nom = 'Apport nutritif']/@value"/></li>
+                <li><strong>Produit : </strong>
                     <xsl:for-each select="preceding::objet[@type= 'produit']">
                         <xsl:if test="$idprod= @id">
                             <a href="produits.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                         </xsl:if>
                      </xsl:for-each>
                 </li>
-                <li>Descriptif : <xsl:value-of select="info[@nom = 'descriptif']"/></li>
+                <li><strong>Descriptif : </strong><xsl:value-of select="info[@nom = 'descriptif']"/></li>
+                <li><xsl:value-of select="info[@nom = 'saison']/@value"/></li>
             </ul>
         </xsl:for-each>
 

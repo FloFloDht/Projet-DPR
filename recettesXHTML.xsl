@@ -46,37 +46,37 @@
                 <h2 id="{$ID}"><xsl:value-of select="info[@nom = 'nom']/@value"/></h2>
                 <p><img src="{$image}"/></p>
                 <ul>
-                    <li>Résumé : <xsl:value-of select="info[@nom='résumé']"/></li>
-                    <ul>Ingrédients :
+                    <li><strong>Résumé : </strong><xsl:value-of select="info[@nom='résumé']"/></li>
+                    <br/>
+                    <strong>Ingrédients pour la préparation :</strong>
                         <xsl:for-each select="following::objet[@type= 'ingrédient']">
                             <xsl:if test="$idingr = @id">
                                 <li><a href="ingredients.html#{@id}"><xsl:value-of select="info[@nom = 'nom']/@value"/></a>
                                     <xsl:value-of select="@quantite"/></li>
                             </xsl:if>
                         </xsl:for-each>
-                    </ul>
-                    <li>Sous-catégorie :
+                    <br/>
+                    <li><strong>Sous-catégorie :</strong>
                         <xsl:for-each select="preceding::objet[@type= 'sous-catégorie']">
                             <xsl:if test="$idsouscat = @id">
                                 <a href="categories.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                             </xsl:if>
                         </xsl:for-each>
                     </li>
-                    <li>Nombre de personne : <xsl:value-of select="info[@nom='nbre_personnes']/value"/></li>
-                    <li>Préparation : <xsl:value-of select="info[@nom='Préparation']/@value"/></li>
-                    <li>Cuisson: <xsl:value-of select="info[@nom='Cuisson']/@value"/></li>
-                    <li>Repos : <xsl:value-of select="info[@nom='Repos']/@value"/></li>
-                    <li>Préparation : <xsl:value-of select="info[@nom='Préparation']"/></li>
+                    <li><strong>Nombre de personne : </strong><xsl:value-of select="info[@nom='nbre_personnes']/value"/></li>
+                    <li><strong>Temps de préparation :</strong><xsl:value-of select="info[@nom='Préparation']/@value"/></li>
+                    <li><strong>Temps de Cuisson : </strong><xsl:value-of select="info[@nom='Cuisson']/@value"/></li>
+                    <li><strong>Temps de repos : </strong><xsl:value-of select="info[@nom='Repos']/@value"/></li>
                     <li>
                         <xsl:for-each select="following::objet[@type= 'auteur']">
                             <xsl:if test="$idaut = @id">
-                                Auteur :<a href="auteurs.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
+                                <strong>Auteur : </strong><a href="auteurs.html#{@id}"><xsl:value-of select="info[@nom='nom']/@value"/></a>
                             </xsl:if>
                         </xsl:for-each>
                     </li>
-                    <li>Difficultée: <xsl:value-of select="info[@nom='difficulté']/@value"/></li>
-                    <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>
-                    <li>Note : <xsl:value-of select="info[@nom='note']/@value"/></li>
+                    <li><strong>Difficultée : </strong><xsl:value-of select="info[@nom='difficulté']/@value"/></li>
+                    <li><strong>Date publication : </strong><xsl:value-of select="info[@nom='date_publication']/@value"/></li>
+                    <li><strong>Note : </strong><xsl:value-of select="info[@nom='note']/@value"/></li>
                 </ul>
         </xsl:for-each>
 

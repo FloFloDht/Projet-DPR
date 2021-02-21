@@ -47,7 +47,6 @@
                 <p><img src="{$image}"/></p>
                 <ul>
                     <li>Résumé : <xsl:value-of select="info[@nom='résumé']"/></li>
-                    <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>
                     <ul>Ingrédients :
                         <xsl:for-each select="following::objet[@type= 'ingrédient']">
                             <xsl:if test="$idingr = @id">
@@ -76,6 +75,7 @@
                         </xsl:for-each>
                     </li>
                     <li>Difficultée: <xsl:value-of select="info[@nom='difficulté']/@value"/></li>
+                    <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>
                     <li>Note : <xsl:value-of select="info[@nom='note']/@value"/></li>
                 </ul>
         </xsl:for-each>

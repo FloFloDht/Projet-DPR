@@ -21,14 +21,6 @@
                 <br/>
                 <h1>Bienvenue sur notre site de recettes de cuisine</h1>
                 <h2>Vous trouverez ici des plats qui combleront vos envies.</h2>
-               <!-- <footer>
-                    <p>
-                        <a href="https://www.univ-amu.fr/">
-                            <img src="./asset/logo_amu.png" alt="logo_amu" width="160" height="80"/>
-                        </a>
-                        M1 Informatique 2021 - Projet DPR - Dhont Florent Gomiz Thomas
-                    </p>
-                </footer> -->
             </body>
         </html>
     </xsl:template>

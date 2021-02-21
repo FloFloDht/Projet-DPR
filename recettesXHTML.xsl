@@ -9,12 +9,14 @@
             </head>
             <body>
                 <nav>
-                    <a href="index.html">Acceuil</a>
-                    <a href="auteurs.html">Auteurs</a>
-                    <a href="categories.html">Categories</a>
-                    <a href="ingredients.html">Ingredients</a>
-                    <a href="produits.html">Produits</a>
-                    <a href="recettes.html">Recettes</a>
+                    <ul>
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="auteurs.html">Auteurs</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="ingredients.html">Ingredients</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="recettes.html">Recettes</a></li>
+                    </ul>
                 </nav>
                 <xsl:call-template name="ancrage-des-recettes"/>
                 <xsl:call-template name="liste-des-recettes"/>
@@ -46,7 +48,6 @@
                 <ul>
                     <li>Résumé : <xsl:value-of select="info[@nom='résumé']"/></li>
                     <li>Date publication : <xsl:value-of select="info[@nom='date_publication']/@value"/></li>
-                    <li><xsl:value-of select="info[@nom='difficulté']/@value"/></li>
                     <ul>Ingrédients :
                         <xsl:for-each select="following::objet[@type= 'ingrédient']">
                             <xsl:if test="$idingr = @id">
@@ -74,6 +75,7 @@
                             </xsl:if>
                         </xsl:for-each>
                     </li>
+                    <li>Difficultée: <xsl:value-of select="info[@nom='difficulté']/@value"/></li>
                     <li>Note : <xsl:value-of select="info[@nom='note']/@value"/></li>
                 </ul>
         </xsl:for-each>

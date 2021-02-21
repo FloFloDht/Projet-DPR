@@ -8,12 +8,14 @@
             </head>
             <body>
                 <nav>
-                    <a href="index.html">Acceuil</a>
-                    <a href="auteurs.html">Auteurs</a>
-                    <a href="categories.html">Categories</a>
-                    <a href="ingredients.html">Ingredients</a>
-                    <a href="produits.html">Produits</a>
-                    <a href="recettes.html">Recettes</a>
+                    <ul>
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="auteurs.html">Auteurs</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="ingredients.html">Ingredients</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="recettes.html">Recettes</a></li>
+                    </ul>
                 </nav>
                 <xsl:call-template name="ancrage-des-categories"/>
                 <xsl:call-template name="liste-des-categories"/>

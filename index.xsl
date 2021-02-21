@@ -16,7 +16,13 @@
                     <a href="produits.html">Produits</a>
                     <a href="recettes.html">Recettes</a>
                 </nav>
+                <br/>
                 <h1>Bienvenue</h1>
+                <h2>Retrouvez ici toutes les recettes dont vous avez besoin selon vos envies</h2>
+                <h4>Notre choix de recette du moment : </h4>
+                <div classe="recettesHome">
+                    <p></p>
+                </div>
                 <footer>
                     <p>
                         <a href="https://www.univ-amu.fr/">
